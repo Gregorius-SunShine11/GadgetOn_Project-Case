@@ -20,7 +20,6 @@ class GadgetSeeder extends Seeder
             "description" => 'test gadget',
             "year" => "2014",
             "quantity"=> 10,
-            "image" => 'phone.png'
         ]);
     }
 }

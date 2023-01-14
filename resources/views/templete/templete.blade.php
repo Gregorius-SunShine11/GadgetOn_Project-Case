@@ -15,7 +15,12 @@
             padding:0;
         }
 
+        body{
+            overflow-x: hidden;
+        }
+
         .btn-red{
+            border: 2px solid #F40928;
             background: #F40928;
             color: white;
             font-weight: bold;
@@ -24,7 +29,7 @@
         .btn-red:hover{
             background:white ;
             color: #F40928;
-            border: 3px solid #F40928;
+            border: 2px solid #F40928;
             font-weight: bold;
         }
 

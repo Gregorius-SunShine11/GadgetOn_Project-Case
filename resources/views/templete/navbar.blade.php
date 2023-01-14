@@ -36,6 +36,7 @@
                     </a>
                     <div class="dropdown-menu">
                         <a class="dropdown-item" href="{{route('index_account')}}" style="color: #112138">Account Detail</a>
+                        <a class="dropdown-item" href="" style="color: #112138">Transaction History</a>
                         <form action="{{ route('logout') }}" method="POST" class="dropdown-item">
                             @csrf
                             <button type="submit "  class="btn-polos dropdown-item">Logout</button>
