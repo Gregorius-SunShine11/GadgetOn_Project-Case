@@ -13,6 +13,12 @@ class GadgetSeeder extends Seeder
      */
     public function run()
     {
-        //
+        DB::table('gadgets')->insert([
+            "name" => "Samsung S7",
+            "price" => 3000000,
+            "description" => 'test gadget',
+            "year" => "2014",
+            "quantity"=> 10
+        ]);
     }
 }
