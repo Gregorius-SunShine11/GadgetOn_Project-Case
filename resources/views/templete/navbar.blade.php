@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light p-0" >
-    <div class="container-fluid" style="background: #112138; height: 100px; ">
+    <div class="container-fluid" style="background: #112138; height: 100px;  box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.25)">
         <div class="d-flex align-items-center justify-content-center">
             <a class="navbar-brand m-0" href="{{route('index_home')}}">
                 <img src={{asset('IMG/logo.png')}}  alt="Logo" width="200px">
@@ -34,11 +34,11 @@
                     <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         My Account
                     </a>
-                    <div class="dropdown-menu">
+                    <div class="dropdown-menu d-flex flex-column align-items-start">
                         <a class="dropdown-item" href="{{route('index_account')}}" style="color: #112138">Account Detail</a>
-                        <form action="{{ route('logout') }}" method="POST">
+                        <form action="{{ route('logout') }}" method="POST" class="dropdown-item">
                             @csrf
-                            <button type="submit "  class="btn-polos dropdown-item">Logout</button>
+                            <button type="submit "  class="btn-polos">Logout</button>
                         </form>
                     </div>
                 </div>

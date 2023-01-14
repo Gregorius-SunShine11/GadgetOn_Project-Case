@@ -14,10 +14,31 @@
             margin:0;
             padding:0;
         }
+
+        .btn-red{
+            background: #F40928;
+            color: white;
+            font-weight: bold;
+        }
+
+        .btn-red:hover{
+            background:white ;
+            color: #F40928;
+            border: 3px solid #F40928;
+            font-weight: bold;
+        }
+
+        .text-dark-blue{
+            color: #112138;
+        }
+
+        .text-red{
+            color: #F40928;
+        }
     </style>
 
 </head>
-<body style="padding: 0%;">
+<body style="padding: 0%; background: #112138;">
     @include('templete.navbar')
     @yield('content')
 </body>
