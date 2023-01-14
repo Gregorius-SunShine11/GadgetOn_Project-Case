@@ -18,11 +18,12 @@ use Illuminate\Support\Facades\Route;
 */
 Route::get('/', [PageController::class, 'index_home'])->name('index_home');
 Route::get('/cart', [PageController::class, 'index_cart'])->name('index_cart')->middleware('isGuest');
-Route::get('/accountDetail', [AccountController::class, 'index_account'])->name('index_account');
+Route::get('/accountDetail', [UserController::class, 'index_accountDetail'])->name('index_account');
 Route::get('/auth/login', [UserController::class, 'index_login'])->name('index_login');
 Route::get('/auth/register', [UserController::class, 'index_register'])->name('index_register');
 Route::post('/auth/login', [UserController::class, 'login'])->name('login');
 Route::post('/auth/register', [UserController::class, 'register'])->name('register');
 Route::post('/auth/logout', [UserController::class, 'logout'])->name('logout');
+Route::post('/updateProfile', [UserController::class, 'updateProfile'])->name('updateProfile');
 
 

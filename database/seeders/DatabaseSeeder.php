@@ -16,13 +16,16 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // \App\Models\User::factory(10)->create();
-        DB::table('users')->insert([
-            "name" => "admin",
-            "email" => "admin@gmail.com",
-            "password" => Hash::make('admin123'),
-            "address" => "Somewhere",
-            "gender"=>"Male",
-            "role" => "Admin",
+        // DB::table('users')->insert([
+        //     "name" => "admin",
+        //     "email" => "admin@gmail.com",
+        //     "password" => Hash::make('admin123'),
+        //     "address" => "Somewhere",
+        //     "gender"=>"Male",
+        //     "role" => "Admin",
+        // ]);
+        $this->call([
+            GadgetSeeder::class,
         ]);
     }
 }

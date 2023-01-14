@@ -15,14 +15,14 @@
               </div>
               <div class="mb-2 d-flex flex-column align-items-start">
                 <label for="email" class="form-label text-dark-blue">Email address</label>
-                <input type="email" name="email" class="form-control text-dark-blue" id="email" placeholder="name@example.com">
+                <input type="email" name="email" class="form-control text-dark-blue" id="email" placeholder="name@example.com" value="{{Cookie::get('CookieEmail') !== null ? Cookie::get('CookieEmail'): "" }}">
               </div>
               <div class="mb-2 d-flex flex-column align-items-start">
                 <label for="password" class="form-label text-dark-blue">Password</label>
-                <input type="password" name="password" class="form-control text-dark-blue" id="password" placeholder="8 - 20 Characters">
+                <input type="password" name="password" class="form-control text-dark-blue" id="password" placeholder="Min. 5 Characters" value="{{Cookie::get('CookiePassword') !== null ? Cookie::get('CookiePassword'): "" }}">
               </div>
               <div class="mb-2 form-check d-flex justify-content-start gap-2">
-                <input class="form-check-input" type="checkbox" name="remember" value="0" id="remember">
+                <input class="form-check-input" type="checkbox" name="remember" id="remember" checked={{Cookie::get('CookieEmail')!== null }}>
                 <label class="form-check-label text-dark-blue" for="remember">
                   Remember Me
                 </label>

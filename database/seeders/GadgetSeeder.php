@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class GadgetSeeder extends Seeder
 {
@@ -18,7 +19,8 @@ class GadgetSeeder extends Seeder
             "price" => 3000000,
             "description" => 'test gadget',
             "year" => "2014",
-            "quantity"=> 10
+            "quantity"=> 10,
+            "image" => 'phone.png'
         ]);
     }
 }

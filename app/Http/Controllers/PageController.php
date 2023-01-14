@@ -15,4 +15,5 @@ class PageController extends Controller
     public function index_cart(){
         return view('order.cart');
     }
+
 }

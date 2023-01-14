@@ -8,7 +8,7 @@
             <h1>Our Products</h1>
             @foreach($Gadget as $g)
             <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="" alt="Card image cap">
+                <img class="card-img-top" src="{{asset('IMG/'.$g->image)}}" alt="Card image cap">
                 <div class="card-body">
                     <h5 class="card-title"> {{ $g->name }}</h5>
                     <p class="card-text"> {{ $g->price }}</p>

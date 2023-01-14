@@ -34,11 +34,11 @@
                     <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         My Account
                     </a>
-                    <div class="dropdown-menu d-flex flex-column align-items-start">
+                    <div class="dropdown-menu">
                         <a class="dropdown-item" href="{{route('index_account')}}" style="color: #112138">Account Detail</a>
                         <form action="{{ route('logout') }}" method="POST" class="dropdown-item">
                             @csrf
-                            <button type="submit "  class="btn-polos">Logout</button>
+                            <button type="submit "  class="btn-polos dropdown-item">Logout</button>
                         </form>
                     </div>
                 </div>
