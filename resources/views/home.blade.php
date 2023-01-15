@@ -15,7 +15,7 @@
                                 <p>{{$g->year}}</p>
                             </div>
                             <h5 class="card-text">Rp.{{$g->price}}</h5>
-                            <a href="" class="btn btn-red">View Product</a>
+                            <a href="{{route('index_viewProduct', $g->id)}}" class="btn btn-red">View Product</a>
                         </div>
                     </div>
                 </div>

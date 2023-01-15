@@ -33,6 +33,20 @@
             font-weight: bold;
         }
 
+        .btn-dark-blue{
+            border: 2px solid #112138;
+            background: #112138;
+            color: white;
+            font-weight: bold;
+        }
+
+        .btn-dark-blue:hover{
+            background:white ;
+            color: #112138;
+            border: 2px solid #112138;
+            font-weight: bold;
+        }
+
         .text-dark-blue{
             color: #112138;
         }
