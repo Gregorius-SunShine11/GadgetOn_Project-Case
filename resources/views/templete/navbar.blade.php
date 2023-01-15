@@ -13,8 +13,8 @@
                         Manage Product
                     </a>
                     <div class="dropdown-menu">
-                        <a class="dropdown-item" href="{{route('index_home')}}" style="color: #112138">View All Product</a>
-                        <a class="dropdown-item" href="{{route('index_home')}}" style="color: #112138">Add Product</a>
+                        <a class="dropdown-item" href="{{route('index_product')}}" style="color: #112138">View All Product</a>
+                        <a class="dropdown-item" href="{{route('create_product')}}" style="color: #112138">Add Product</a>
                     </div>
                  </div>
 
