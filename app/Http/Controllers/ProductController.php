@@ -21,7 +21,7 @@ class ProductController extends Controller
     }
 
     public function store_product (Request $request) {
-        $request->validate([
+        $validator = Validator::make($request->all(), [
             'name' => 'required|min:5',
             'description' => 'required|min:50',
             'price' => 'required|integer',
@@ -30,13 +30,22 @@ class ProductController extends Controller
             'image' => 'nullable|file|image',
         ]);
 
-        Gadget::create([
-            'name' => $request->input('name'),
-            'description' => $request->input('description'),
-            'price' => $request->input('price'),
-            'year' => $request->input('year'),
-            'quantity' => $request->input('quantity'),
-            'image' => $request->input('image')
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator);
+        }
+
+        $destinationPath = 'images';
+        $myimage = $request->image->getClientOriginalName();
+        $request->image->move(public_path($destinationPath), $myimage);
+
+        $validator = $validator->validated();
+        DB::table('gadgets')->insert([
+            'name' => $validator['name'],
+            'description' => $validator['description'],
+            'price' => $validator['price'],
+            'year' => $validator['year'],
+            'quantity' => $validator['quantity'],
+            'image' => $myimage,
         ]);
         return redirect()->route('index_product');
     }
@@ -63,6 +72,7 @@ class ProductController extends Controller
             'name' => $request['name'],
             'description' => $request['description'],
             'price' => $request['price'],
+            'year' => $request['year'],
             'image' => $request['image']
         ]);
         return redirect()->route('index_product');

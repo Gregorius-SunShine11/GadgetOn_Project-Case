@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container my-5" style="width:40%;">
-    <form action="{{route('edit_product',$Gadget->id)}}" method="POST", enctype="multipart/form-data">
+    <form action="{{route('update_product',$Gadget->id)}}" method="POST", enctype="multipart/form-data">
         @csrf
         @method('patch')
         <div class="mb-2 d-flex justify-content-center">

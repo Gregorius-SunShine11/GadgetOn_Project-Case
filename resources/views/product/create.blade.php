@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container my-5" style="width:40%;">
-    <form action="{{route('create_product')}}" method="POST">
+    <form action="{{route('store_product')}}" method="POST" , enctype = "multipart/form-data">
         @csrf
         <div class="mb-2 d-flex justify-content-center">
             <h2 class="h2 text-white">Add Product</h2>
@@ -28,14 +28,14 @@
             <input type="number" name="quantity" class="form-control text-dark-blue" id="quantity" placeholder="Quantity">
         </div>
         <div class="mb-2 d-flex flex-column align-items-start">
-            <label for="file" class="form-label text-white">Product Image</label>
-            <input type="file" name="image" id="file" class="form-control text-dark-blue" accept="image/*">
+            <label for="image" class="form-label text-white">Product Image</label>
+            <input type="file" name="image" id="image" class="form-control text-dark-blue" accept="image/*">
         </div>
-        <div class="mb-2">
+        <!-- <div class="mb-2">
             @if ($errors->any())
                 <p class="text-danger">{{$errors->first()}}</p>
             @endif
-        </div>
+        </div> -->
         <div class="mb-2">
             <button type="submit" class="btn btn-red w-100">Add Product</button>
         </div>
