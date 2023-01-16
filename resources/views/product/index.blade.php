@@ -1,7 +1,7 @@
 @extends('templete.templete')
 
 @section('content')
-<div class="container">
+<div class="container my-5">
     <div class="row justify-content-center">
         <div class="col-12">
             <table class="table table-bordered text-white">
@@ -19,16 +19,16 @@
                     @foreach($Gadget as $g)
                     <tr>
                         <td>{{ $g->id }}</td>
-                        <td>{{asset('IMG/'.$g->image)}}</td>
+                        <td> <img src="{{asset('images/'.$g->image)}}" class="card-img-top" alt="" style="height: 240px; width: 320px" ></td>
                         <td>{{ $g->name }}</td>
                         <td>{{ $g->description }}</td>
                         <td>Rp.{{ $g->price }}</td>
                         <td>
-                            <a class="btn btn-primary" href="{{route('edit_product',$g->id)}}" role="button">Update</a>
-                            <form method="post" action="/product/delete/{{ $g->id }}">
+                            <a class="btn btn-primary w-100" href="{{route('edit_product',$g->id)}}" role="button">Update</a>
+                            <form method="post" action="/product/delete/{{ $g->id }}" class="w-100">
                                 @csrf
                                 @method('delete')
-                                <button class="btn btn-danger" type="submit">Delete</button>
+                                <button class="btn btn-danger w-100" type="submit">Delete</button>
                             </form>
                         </td>
                     </tr>

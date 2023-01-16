@@ -17,10 +17,9 @@ class CreateGadgetsTable extends Migration
             $table->id();
             $table->string('name');
             $table->double('price');
-            $table->string('image');
+            $table->string('image')->nullable();
             $table->text('description');
             $table->string('year');
-            $table->integer('quantity');
             $table->timestamps();
         });
     }

@@ -52,6 +52,6 @@ class User extends Authenticatable
 
     public function chart()
     {
-        return $this->hasMany(Chart::class, 'user_id', 'id');
+        return $this->hasMany(Cart::class, 'user_id', 'id');
     }
 }

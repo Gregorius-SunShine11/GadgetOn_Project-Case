@@ -2,13 +2,12 @@
 
 
 @section('content')
-
 <h3 class="display-4 text-center text-white my-5" style="font-weight: bold; -webkit-text-stroke: 2px #F40928;">Our Products</h3>
 @if ($Gadget->isEmpty())
     <h1 class="text-white display-5 text-center">No Product</h1>
 @else
 <div class="d-flex flex-column justify-content-center align-items-center my-5">
-    <div class="row">
+    <div class="row mb-3">
         @foreach ($Gadget as $g)
                 <div class="col d-flex justify-content-center mb-1">
                     <div class="card mb-3 ms-2" style="width: 480px; border-width:3px; border-color:#F40928">
@@ -25,7 +24,9 @@
                 </div>
         @endforeach
     </div>
+    {{$Gadget->links()}}
 </div>
 @endif
+
 
 @endsection

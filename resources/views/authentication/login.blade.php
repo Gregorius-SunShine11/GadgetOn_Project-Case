@@ -8,7 +8,7 @@
             <img src="{{asset('IMG/phone.png')}}" class="img-fluid rounded-start" alt="...">
           </div>
           <div class="container my-5 px-5 d-flex flex-column justify-content-center" style="width:60%">
-            <form action="{{route('login')}}" method="POST">
+            <form action="{{route('login')}}" method="POST" enctype="multipart/form-data">
                 @csrf
               <div class="mb-2 d-flex justify-content-center">
                 <h3 class="h3 text-dark-blue">Sign In</h3>

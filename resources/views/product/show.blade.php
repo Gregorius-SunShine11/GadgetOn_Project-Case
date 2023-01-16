@@ -7,7 +7,7 @@
         <div class="card mb-3" style="width: 75%; border: 3px solid #F40928" >
             <div class="row g-0">
                 <div class="col-md-4">
-                    <img src="{{$Gadget->image}}" class="img-fluid rounded-start" alt="..." width="480px" height="360px">
+                    <img src="{{asset('images/'.$Gadget->image)}}" class="img-fluid rounded-start" alt="..." width="480px" height="360px">
                 </div>
                 <div class="col-md-8">
                     <div class="card-body">
@@ -20,20 +20,27 @@
                                 <button type="submit"  class="btn btn-red w-100">Login to purchase</button>
                             </form>
                         @elseif (Auth::user()->role == "Member")
-                            <form action="" method="POST" enctype="multipart/form-data">
+                            <form action="{{route('add_product', [Auth::user()->id, $Gadget->id])}}" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 <div class="d-flex flex-column">
                                     <label for="Qty" class="mb-2">Quantity: </label>
-                                    <input type="number" name="Qty" id="Qty" min="1" style="width: 60px" placeholder="1" class="w-100 text-center mb-3">
-                                    <button class="btn btn-dark-blue text-white" type="submit">Add To Cart</button>
+                                    <input type="number" name="quantity" id="Qty" min="1" style="width: 60px" placeholder="1" class="w-100 text-center mb-3">
+                                    <div class="mb-2">
+                                        @if ($errors->any())
+                                            <p class="text-danger">{{$errors->first()}}</p>
+                                        @endif
+                                    </div>
+                                    <button class="btn btn-dark-blue" type="submit">Add To Cart</button>
                                 </div>
                             </form>
                         @elseif (Auth::user()->role == "Admin")
                             <div class="d-flex justify-content-between">
-                                <form action="" method="GET" style="width: 48%">
+                                <form action="{{route('edit_product', $Gadget->id)}}" method="GET" style="width: 48%">
                                     <button type="submit"  class="btn btn-dark-blue w-100">Edit Product</button>
                                 </form>
-                                <form action="" method="GET" style="width: 48%">
+                                <form action="{{route('delete_product', $Gadget->id)}}" method="POST" style="width: 48%">
+                                    @csrf
+                                    @method('delete')
                                     <button type="submit"  class="btn btn-red w-100">Delete Product</button>
                                 </form>
                             </div>

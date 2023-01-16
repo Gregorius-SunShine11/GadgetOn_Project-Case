@@ -26,8 +26,7 @@ class ProductController extends Controller
             'description' => 'required|min:50',
             'price' => 'required|integer',
             'year' => 'required|integer',
-            'quantity' => 'required|integer|min:1',
-            'image' => 'nullable|file|image',
+            'image' => 'required|file|image',
         ]);
 
         if ($validator->fails()) {
@@ -44,8 +43,7 @@ class ProductController extends Controller
             'description' => $validator['description'],
             'price' => $validator['price'],
             'year' => $validator['year'],
-            'quantity' => $validator['quantity'],
-            'image' => $myimage,
+            'image' => $myimage
         ]);
         return redirect()->route('index_product');
     }
@@ -72,9 +70,18 @@ class ProductController extends Controller
             'name' => $request['name'],
             'description' => $request['description'],
             'price' => $request['price'],
-            'year' => $request['year'],
-            'image' => $request['image']
+            'year' => $request['year']
         ]);
+
+        if($request['image'] != null){
+            $destinationPath = 'images';
+            $myimage = $request->image->getClientOriginalName();
+            $request->image->move(public_path($destinationPath), $myimage);
+            DB::table('gadgets')->where('id',$id)->update([
+                'image' => $myimage
+            ]);
+        }
+
         return redirect()->route('index_product');
     }
 

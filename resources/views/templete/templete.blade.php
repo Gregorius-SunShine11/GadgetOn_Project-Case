@@ -47,6 +47,23 @@
             font-weight: bold;
         }
 
+
+        .btn-green{
+            border: 2px solid #198754;
+            background: #198754;
+            color: white;
+            font-weight: bold;
+        }
+
+        .btn-green:hover{
+            border: 2px solid #198754;
+            background: white;
+            color: #198754;
+            font-weight: bold;
+        }
+
+
+
         .text-dark-blue{
             color: #112138;
         }

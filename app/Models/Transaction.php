@@ -10,6 +10,7 @@ class Transaction extends Model
     use HasFactory;
 
     protected $guarded = ['id'];
+    protected $table = 'transactions';
 
     public function gadget()
     {

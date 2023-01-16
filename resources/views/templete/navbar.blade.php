@@ -19,12 +19,12 @@
                  </div>
 
             @else
-                <a class="nav-link text-white" href="{{route('index_cart')}}">My Cart</a>
+                <a class="nav-link text-white" href="{{route('index_cart', Auth::check() ? Auth::user()->id: 0)}}">My Cart</a>
             @endif
 
-            <form class="d-flex w-75">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Search</button>
+            <form class="d-flex w-75" action="{{route('index_search')}}" method="GET">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="searchBar">
+                <button class="btn btn-green" type="submit">Search</button>
             </form>
             @if (!Auth::check())
                 <a class="nav-link  text-white" href="{{route('index_login')}}">Login</a>
@@ -36,7 +36,9 @@
                     </a>
                     <div class="dropdown-menu">
                         <a class="dropdown-item" href="{{route('index_account')}}" style="color: #112138">Account Detail</a>
-                        <a class="dropdown-item" href="" style="color: #112138">Transaction History</a>
+                        @if (Auth::user()->role == "Member")
+                            <a class="dropdown-item" href="{{route('index_transaction', Auth::user()->id)}}" style="color: #112138">Transaction History</a>
+                        @endif
                         <form action="{{ route('logout') }}" method="POST" class="dropdown-item">
                             @csrf
                             <button type="submit "  class="btn-polos dropdown-item">Logout</button>

@@ -10,15 +10,15 @@ class Gadget extends Model
     use HasFactory;
 
     protected $guarded = ['id'];
-
+    protected $table = 'gadgets';
 
     public function transaction()
     {
-        return $this->hasMany(Transaction::class, 'gadget_id', 'id');
+        return $this->hasMany(Transaction::class);
     }
 
     public function chart()
     {
-        return $this->hasMany(Chart::class, 'gadget_id', 'id');
+        return $this->hasMany(Cart::class);
     }
 }

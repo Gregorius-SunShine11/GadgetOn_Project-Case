@@ -17,25 +17,21 @@
         </div>
         <div class="mb-2 d-flex flex-column align-items-start">
             <label for="price" class="form-label text-white">Price</label>
-            <input type="number" name="price" class="form-control text-dark-blue" id="price" placeholder="Price">
+            <input type="text" name="price" class="form-control text-dark-blue" id="price" placeholder="Price">
         </div>
         <div class="mb-2 d-flex flex-column align-items-start">
             <label for="year" class="form-label text-white">Released Year</label>
-            <input type="number" name="year" class="form-control text-dark-blue" id="year" placeholder="Released Year">
-        </div>
-        <div class="mb-2 d-flex flex-column align-items-start">
-            <label for="quantity" class="form-label text-white">Quantity</label>
-            <input type="number" name="quantity" class="form-control text-dark-blue" id="quantity" placeholder="Quantity">
+            <input type="text" name="year" class="form-control text-dark-blue" id="year" placeholder="Released Year">
         </div>
         <div class="mb-2 d-flex flex-column align-items-start">
             <label for="image" class="form-label text-white">Product Image</label>
             <input type="file" name="image" id="image" class="form-control text-dark-blue" accept="image/*">
         </div>
-        <!-- <div class="mb-2">
+        <div class="mb-2">
             @if ($errors->any())
                 <p class="text-danger">{{$errors->first()}}</p>
             @endif
-        </div> -->
+        </div>
         <div class="mb-2">
             <button type="submit" class="btn btn-red w-100">Add Product</button>
         </div>

@@ -3,7 +3,7 @@
 
 @section('content')
     <div class="container my-5" style="width:40%;">
-        <form action="{{route('register')}}" method="POST" >
+        <form action="{{route('register')}}" method="POST" enctype="multipart/form-data" >
         @csrf
         <div class="mb-2 d-flex justify-content-center">
             <h3 class="h3 text-white">CREATE AN ACCOUNT</h3>

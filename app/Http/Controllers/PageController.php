@@ -12,8 +12,12 @@ class PageController extends Controller
         return view('home', compact('Gadget'));
     }
 
-    public function index_cart(){
-        return view('order.cart');
+    public function index_search(Request $request){
+        if($request->searchBar == null){
+            return redirect()->route('index_home');
+        }
+        $Gadget = Gadget::where('name', 'LIKE', "%$request->searchBar%")->paginate(6);
+        return view('product.search', compact('Gadget'));
     }
 
 }
