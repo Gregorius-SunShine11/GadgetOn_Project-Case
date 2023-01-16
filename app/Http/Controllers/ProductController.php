@@ -24,7 +24,7 @@ class ProductController extends Controller
         $validator = Validator::make($request->all(), [
             'name' => 'required|min:5',
             'description' => 'required|min:50',
-            'price' => 'required|integer',
+            'price' => 'required|integer|gt:0',
             'year' => 'required|integer',
             'image' => 'required|file|image',
         ]);
@@ -62,7 +62,7 @@ class ProductController extends Controller
         $request->validate([
             'name' => 'required|min:5',
             'description' => 'required|min:50',
-            'price' => 'required|integer',
+            'price' => 'required|integer|gt:0',
             'image' => 'nullable|file|image',
         ]);
 
